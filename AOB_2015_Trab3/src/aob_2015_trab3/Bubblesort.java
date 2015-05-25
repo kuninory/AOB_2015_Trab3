@@ -16,13 +16,13 @@ public class Bubblesort {
         Vetor vetorExemplo = new Vetor(vetorFonte.meuTamanho);
         vetorExemplo.meuVetor = (int[]) vetorFonte.meuVetor.clone();
         
-        int n = vetorExemplo.meuVetor.length;
+        int tamanho = vetorExemplo.meuVetor.length;
         int temp;
-        long startTimeNano = System.nanoTime();
         long startTimeMilli = System.currentTimeMillis();
+        long startTimeNano = System.nanoTime();
 
-        for (int i = 0; i < n; i++) {
-            for (int j = 1; j < (n - i); j++) {
+        for (int i = 0; i < tamanho; i++) {
+            for (int j = 1; j < (tamanho - i); j++) {
 
                 if (vetorExemplo.meuVetor[j - 1] > vetorExemplo.meuVetor[j]) {
                     temp = vetorExemplo.meuVetor[j - 1];
