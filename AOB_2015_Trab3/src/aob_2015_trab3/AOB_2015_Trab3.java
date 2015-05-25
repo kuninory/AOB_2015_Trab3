@@ -1,32 +1,66 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package aob_2015_trab3;
 
-import java.util.Random;
+import java.util.Scanner;
 
-/**
- *
- * @author alunoinf
- */
 public class AOB_2015_Trab3 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static int numDeExec = 5;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
 
-        Vetores.preencheVetores();
-        
-        Vetores.imprimeVetor(Vetores.array10_2);
-        
-        Bubblesort.Bubblesorter(Vetores.array10_2);
-        
-        Vetores.imprimeVetor(Vetores.array10_2);
+        Scanner ler = new Scanner(System.in);
+
+        int opcMenuTipoAlgo = 99;
+        int opcTamanhoVetor;
+
+        while (opcMenuTipoAlgo != 0) {
+
+            System.out.println("Escolha uma opção:"
+                    + "\n1- Testar o Bubblesort;"
+                    + "\n2- Testar o Insertionsort;"
+                    + "\n3- Testar o Selectionsort;"
+                    + "\n4- Testar o Shellsort;"
+                    + "\n5- Testar o Quicksort;"
+                    + "\n6- Testar o Heapsort;"
+                    + "\n0- Sair;");
+            opcMenuTipoAlgo = ler.nextInt();
+
+            if (opcMenuTipoAlgo > 0 && opcMenuTipoAlgo < 7) {
+
+                opcTamanhoVetor = 99;
+
+                while (opcTamanhoVetor != 0) {
+                    System.out.println("Escolha um tamanho de vetor:"
+                            + "\n1- 100;"
+                            + "\n2- 1000;"
+                            + "\n3- 10000;"
+                            + "\n4- 100000;"
+                            + "\n5- 1000000;"
+                            + "\n0- Sair;");
+                    opcTamanhoVetor = ler.nextInt();
+
+                    if (opcTamanhoVetor > 0 && opcTamanhoVetor < 6) {
+
+                        if (opcTamanhoVetor == 1) {
+                            opcTamanhoVetor = 100;
+                        }
+
+                        if (opcMenuTipoAlgo == 1) {
+
+                            System.out.println("Tamanho do vetor= " + opcTamanhoVetor);
+                            Vetor vetor10_2 = new Vetor(opcTamanhoVetor);
+                            vetor10_2.popularVetor();
+                            vetor10_2.imprimirVetor();
+
+                            Bubblesort.Bubblesorter(vetor10_2);
+                            
+                            opcTamanhoVetor= 0;
+                        }
+                    }
+                    opcMenuTipoAlgo = 0;
+                }
+            }
+        }
     }
 
     public static void imprimeResultados(long[] array) {

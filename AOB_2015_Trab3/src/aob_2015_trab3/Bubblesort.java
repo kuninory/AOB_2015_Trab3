@@ -11,20 +11,23 @@ package aob_2015_trab3;
  */
 public class Bubblesort {
 
-    public static void Bubblesorter(int[] intArray) {
+    public static void Bubblesorter(Vetor vetorFonte) throws CloneNotSupportedException {
 
-        int n = intArray.length;
-        int temp = 0;
+        Vetor vetorExemplo = new Vetor(vetorFonte.meuTamanho);
+        vetorExemplo.meuVetor = (int[]) vetorFonte.meuVetor.clone();
+        
+        int n = vetorExemplo.meuVetor.length;
+        int temp;
         long startTimeNano = System.nanoTime();
         long startTimeMilli = System.currentTimeMillis();
 
         for (int i = 0; i < n; i++) {
             for (int j = 1; j < (n - i); j++) {
 
-                if (intArray[j - 1] > intArray[j]) {
-                    temp = intArray[j - 1];
-                    intArray[j - 1] = intArray[j];
-                    intArray[j] = temp;
+                if (vetorExemplo.meuVetor[j - 1] > vetorExemplo.meuVetor[j]) {
+                    temp = vetorExemplo.meuVetor[j - 1];
+                    vetorExemplo.meuVetor[j - 1] = vetorExemplo.meuVetor[j];
+                    vetorExemplo.meuVetor[j] = temp;
                 }
             }
         }
@@ -42,6 +45,8 @@ public class Bubblesort {
                 + "\n Tempo Milli Inicial: " + startTimeMilli
                 + "\n Tempo Milli Final: " + endTimeMilli
                 + "\n Total Milli: " + tempoTotalMilli);
+        
+        vetorExemplo.imprimirVetor();
     }
 
 }
