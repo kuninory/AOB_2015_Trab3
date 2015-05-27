@@ -60,6 +60,16 @@ public class AOB_2015_Trab3 {
                             InserctionSort.InsertionSorter(vetorFonte);
 
                             opcTamanhoVetor = 0;
+                        }else if (opcMenuTipoAlgo == 6) {
+
+                            System.out.println("Tamanho do vetor= " + opcTamanhoVetor);
+                            Vetor vetorFonte = new Vetor(opcTamanhoVetor);
+                            vetorFonte.popularVetor();
+                            vetorFonte.imprimirVetor();
+
+                            HeapSort.HeapSorter(vetorFonte);
+
+                            opcTamanhoVetor = 0;
                         }
                     }
                     opcMenuTipoAlgo = 0;
