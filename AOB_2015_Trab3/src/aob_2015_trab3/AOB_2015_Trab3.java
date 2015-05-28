@@ -12,31 +12,31 @@ public class AOB_2015_Trab3 {
     public static void main(String[] args) throws CloneNotSupportedException {
 
         opcMenuTipoAlgo = 99;
-        opcTamanhoVetor = 99;
 
         while (opcMenuTipoAlgo != 0) {
 
             MenuAlgoritmos();
 
+            opcTamanhoVetor = 99;
             if (opcMenuTipoAlgo > 0 && opcMenuTipoAlgo < 7) {
 
                 while (opcTamanhoVetor != 0) {
-                    
+
                     MenuVetores();
 
                     if (opcTamanhoVetor > 0 && opcTamanhoVetor < 7) {
 
                         if (opcTamanhoVetor == 1) {
                             opcTamanhoVetor = 50;
-                        }else if(opcTamanhoVetor == 2) {
+                        } else if (opcTamanhoVetor == 2) {
                             opcTamanhoVetor = 100;
-                        }else if(opcTamanhoVetor == 3) {
+                        } else if (opcTamanhoVetor == 3) {
                             opcTamanhoVetor = 1000;
-                        }else if(opcTamanhoVetor == 4) {
+                        } else if (opcTamanhoVetor == 4) {
                             opcTamanhoVetor = 10000;
-                        }else if(opcTamanhoVetor == 5) {
+                        } else if (opcTamanhoVetor == 5) {
                             opcTamanhoVetor = 100000;
-                        }else if(opcTamanhoVetor == 6) {
+                        } else if (opcTamanhoVetor == 6) {
                             opcTamanhoVetor = 1000000;
                         }
 
@@ -50,7 +50,7 @@ public class AOB_2015_Trab3 {
                             Bubblesort.Bubblesorter(vetorFonte);
 
                             opcTamanhoVetor = 0;
-                        }else if (opcMenuTipoAlgo == 2) {
+                        } else if (opcMenuTipoAlgo == 2) {
 
                             System.out.println("Tamanho do vetor= " + opcTamanhoVetor);
                             Vetor vetorFonte = new Vetor(opcTamanhoVetor);
@@ -60,7 +60,37 @@ public class AOB_2015_Trab3 {
                             InserctionSort.InsertionSorter(vetorFonte);
 
                             opcTamanhoVetor = 0;
-                        }else if (opcMenuTipoAlgo == 6) {
+                        } else if (opcMenuTipoAlgo == 3) {
+
+                            System.out.println("Tamanho do vetor= " + opcTamanhoVetor);
+                            Vetor vetorFonte = new Vetor(opcTamanhoVetor);
+                            vetorFonte.popularVetor();
+                            vetorFonte.imprimirVetor();
+
+                            SelectionSort.selectionSorter(vetorFonte);
+
+                            opcTamanhoVetor = 0;
+                        } else if (opcMenuTipoAlgo == 4) {
+
+                            System.out.println("Tamanho do vetor= " + opcTamanhoVetor);
+                            Vetor vetorFonte = new Vetor(opcTamanhoVetor);
+                            vetorFonte.popularVetor();
+                            vetorFonte.imprimirVetor();
+
+                            ShellSort.shellSorter(vetorFonte);
+
+                            opcTamanhoVetor = 0;
+                        } else if (opcMenuTipoAlgo == 5) {
+
+                            System.out.println("Tamanho do vetor= " + opcTamanhoVetor);
+                            Vetor vetorFonte = new Vetor(opcTamanhoVetor);
+                            vetorFonte.popularVetor();
+                            vetorFonte.imprimirVetor();
+
+                            QuickSort.execQuickSort(vetorFonte);
+
+                            opcTamanhoVetor = 0;
+                        } else if (opcMenuTipoAlgo == 6) {
 
                             System.out.println("Tamanho do vetor= " + opcTamanhoVetor);
                             Vetor vetorFonte = new Vetor(opcTamanhoVetor);
@@ -72,7 +102,7 @@ public class AOB_2015_Trab3 {
                             opcTamanhoVetor = 0;
                         }
                     }
-                    opcMenuTipoAlgo = 0;
+                    opcMenuTipoAlgo = 99;
                 }
             }
         }

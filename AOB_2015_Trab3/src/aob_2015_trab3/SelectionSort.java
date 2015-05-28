@@ -2,52 +2,52 @@ package aob_2015_trab3;
 
 public class SelectionSort {
 
-    int indiceExterno;
-    int indiceInterno;
-    int elementoMinimo;
-    int[] a;
+    static int indiceExterno;
+    static int indiceInterno;
+    static int elementoMinimo;
+    static int[] a;
 
-    public void selectionSort(int[] intArray) {
+    public static void selectionSorter(Vetor vetorFonte) throws CloneNotSupportedException {
 
-        for (indiceExterno = 0; indiceExterno < intArray.length - 1; indiceExterno++) {
+        Vetor vetorExemplo = new Vetor(vetorFonte.meuTamanho);
+        vetorExemplo.meuVetor = (int[]) vetorFonte.meuVetor.clone();
+
+        int tamanho = vetorExemplo.meuVetor.length;
+        long startTimeMilli = System.currentTimeMillis();
+        long startTimeNano = System.nanoTime();
+
+        for (indiceExterno = 0; indiceExterno < tamanho - 1; indiceExterno++) {
             elementoMinimo = indiceExterno;
 
-            for (indiceInterno = (indiceExterno + 1); indiceInterno < intArray.length; indiceInterno++) {
-                if (intArray[indiceInterno] < intArray[elementoMinimo]) {
+            for (indiceInterno = (indiceExterno + 1); indiceInterno < tamanho; indiceInterno++) {
+                if (vetorExemplo.meuVetor[indiceInterno] < vetorExemplo.meuVetor[elementoMinimo]) {
                     elementoMinimo = indiceInterno;
-                    trocaPosicao(intArray, indiceExterno, indiceInterno);
+                    trocaPosicao(vetorExemplo.meuVetor, indiceExterno, indiceInterno);
                 }
-
             }
-
         }
+        
+        long endTimeNano = System.nanoTime();
+        long endTimeMilli = System.currentTimeMillis();
+
+        long tempoTotalNano = endTimeNano - startTimeNano;
+        long tempoTotalMilli = endTimeMilli - startTimeMilli;
+
+        System.out.println("Tempos Nano: "
+                + "\n Tempo Nano Inicial: " + startTimeNano
+                + "\n Tempo Nano Final: " + endTimeNano
+                + "\n Total Nano: " + tempoTotalNano
+                + "\n\n Tempos Milli: "
+                + "\n Tempo Milli Inicial: " + startTimeMilli
+                + "\n Tempo Milli Final: " + endTimeMilli
+                + "\n Total Milli: " + tempoTotalMilli);
+        
+        vetorExemplo.imprimirVetor();
     }
 
-    public void trocaPosicao(int[] array, int primeiro, int segundo) {
+    public static void trocaPosicao(int[] array, int primeiro, int segundo) {
         int indiceTemporario = array[primeiro];
         array[primeiro] = array[segundo];
         array[segundo] = indiceTemporario;
-    }
-
-    public void imprimeVetor(int[] v) {
-        System.out.print("A=");
-        for (int i = 0; i < v.length; i++) {
-            System.out.print(v[i] + " ");
-        }
-
-        System.out.println("");
-    }
-}
-
-class SelectionSortDemo {
-
-    public static void main(String[] args) {
-        SelectionSort selectionSort = new SelectionSort();
-
-        int[] vetor = {23, 20, 33, 11, 2, 50, 99};
-
-        selectionSort.imprimeVetor(vetor);
-        selectionSort.selectionSort(vetor);
-        selectionSort.imprimeVetor(vetor);
     }
 }

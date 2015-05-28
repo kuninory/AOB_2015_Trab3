@@ -1,2 +1,0 @@
-aob_2015_trab3.SelectionSort
-aob_2015_trab3.SelectionSortDemo

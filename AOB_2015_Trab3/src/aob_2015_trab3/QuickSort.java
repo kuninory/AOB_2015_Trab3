@@ -2,9 +2,33 @@ package aob_2015_trab3;
 
 public class QuickSort {
 
-    static int[] qsort(int[] itens) {
-        quickSorter(itens, 0, itens.length - 1);
-        return itens;
+    public static void execQuickSort(Vetor vetorFonte) throws CloneNotSupportedException {
+
+        Vetor vetorExemplo = new Vetor(vetorFonte.meuTamanho);
+        vetorExemplo.meuVetor = (int[]) vetorFonte.meuVetor.clone();
+        
+        int tamanho = vetorExemplo.meuVetor.length;
+        long startTimeMilli = System.currentTimeMillis();
+        long startTimeNano = System.nanoTime();
+
+        quickSorter(vetorExemplo.meuVetor, 0, tamanho - 1);
+        
+        long endTimeNano = System.nanoTime();
+        long endTimeMilli = System.currentTimeMillis();
+
+        long tempoTotalNano = endTimeNano - startTimeNano;
+        long tempoTotalMilli = endTimeMilli - startTimeMilli;
+
+        System.out.println("Tempos Nano: "
+                + "\n Tempo Nano Inicial: " + startTimeNano
+                + "\n Tempo Nano Final: " + endTimeNano
+                + "\n Total Nano: " + tempoTotalNano
+                + "\n\n Tempos Milli: "
+                + "\n Tempo Milli Inicial: " + startTimeMilli
+                + "\n Tempo Milli Final: " + endTimeMilli
+                + "\n Total Milli: " + tempoTotalMilli);
+        
+        vetorExemplo.imprimirVetor();
     }
 
     private static void quickSorter(int[] itens, int indiceEsquerdo, int indiceDireito) {
