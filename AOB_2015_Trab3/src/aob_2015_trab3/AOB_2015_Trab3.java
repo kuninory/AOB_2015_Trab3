@@ -46,8 +46,12 @@ public class AOB_2015_Trab3 {
                             Vetor vetorFonte = new Vetor(opcTamanhoVetor);
                             vetorFonte.popularVetor();
                             vetorFonte.imprimirVetor();
-
+                            System.out.println("Vetor populado e exibido. Executando o algoritmo agora:");
+                            
                             Bubblesort.Bubblesorter(vetorFonte);
+
+                            System.out.println("\nExecutado o BubbleSort com vetor de "
+                                    + "tamanho= " + opcTamanhoVetor);
 
                             opcTamanhoVetor = 0;
                         } else if (opcMenuTipoAlgo == 2) {
@@ -56,8 +60,12 @@ public class AOB_2015_Trab3 {
                             Vetor vetorFonte = new Vetor(opcTamanhoVetor);
                             vetorFonte.popularVetor();
                             vetorFonte.imprimirVetor();
+                            System.out.println("Vetor populado e exibido. Executando o algoritmo agora:");
 
                             InserctionSort.InsertionSorter(vetorFonte);
+
+                            System.out.println("\nExecutado o InserctionSort com vetor de "
+                                    + "tamanho= " + opcTamanhoVetor);
 
                             opcTamanhoVetor = 0;
                         } else if (opcMenuTipoAlgo == 3) {
@@ -66,8 +74,12 @@ public class AOB_2015_Trab3 {
                             Vetor vetorFonte = new Vetor(opcTamanhoVetor);
                             vetorFonte.popularVetor();
                             vetorFonte.imprimirVetor();
+                            System.out.println("Vetor populado e exibido. Executando o algoritmo agora:");
 
                             SelectionSort.selectionSorter(vetorFonte);
+
+                            System.out.println("\nExecutado o SelectionSort com vetor de "
+                                    + "tamanho= " + opcTamanhoVetor);
 
                             opcTamanhoVetor = 0;
                         } else if (opcMenuTipoAlgo == 4) {
@@ -76,8 +88,12 @@ public class AOB_2015_Trab3 {
                             Vetor vetorFonte = new Vetor(opcTamanhoVetor);
                             vetorFonte.popularVetor();
                             vetorFonte.imprimirVetor();
+                            System.out.println("Vetor populado e exibido. Executando o algoritmo agora:");
 
                             ShellSort.shellSorter(vetorFonte);
+
+                            System.out.println("\nExecutado o ShellSort com vetor de "
+                                    + "tamanho= " + opcTamanhoVetor);
 
                             opcTamanhoVetor = 0;
                         } else if (opcMenuTipoAlgo == 5) {
@@ -86,8 +102,12 @@ public class AOB_2015_Trab3 {
                             Vetor vetorFonte = new Vetor(opcTamanhoVetor);
                             vetorFonte.popularVetor();
                             vetorFonte.imprimirVetor();
+                            System.out.println("Vetor populado e exibido. Executando o algoritmo agora:");
 
                             QuickSort.execQuickSort(vetorFonte);
+
+                            System.out.println("\nExecutado o QuickSort com vetor de "
+                                    + "tamanho= " + opcTamanhoVetor);
 
                             opcTamanhoVetor = 0;
                         } else if (opcMenuTipoAlgo == 6) {
@@ -96,8 +116,12 @@ public class AOB_2015_Trab3 {
                             Vetor vetorFonte = new Vetor(opcTamanhoVetor);
                             vetorFonte.popularVetor();
                             vetorFonte.imprimirVetor();
+                            System.out.println("Vetor populado e exibido. Executando o algoritmo agora:");
 
                             HeapSort.HeapSorter(vetorFonte);
+
+                            System.out.println("\nExecutado o HeapSort com vetor de "
+                                    + "tamanho= " + opcTamanhoVetor);
 
                             opcTamanhoVetor = 0;
                         }
@@ -110,7 +134,7 @@ public class AOB_2015_Trab3 {
 
     public static void MenuAlgoritmos() {
 
-        System.out.println("Escolha uma opção:"
+        System.out.println("\nEscolha uma opção:"
                 + "\n1- Testar o Bubblesort;"
                 + "\n2- Testar o Insertionsort;"
                 + "\n3- Testar o Selectionsort;"
@@ -124,7 +148,7 @@ public class AOB_2015_Trab3 {
 
     public static void MenuVetores() {
 
-        System.out.println("Escolha um tamanho de vetor:"
+        System.out.println("\nEscolha um tamanho de vetor:"
                 + "\n1- 50;"
                 + "\n2- 100;"
                 + "\n3- 1000;"

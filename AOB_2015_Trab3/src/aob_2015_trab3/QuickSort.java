@@ -19,6 +19,8 @@ public class QuickSort {
         long tempoTotalNano = endTimeNano - startTimeNano;
         long tempoTotalMilli = endTimeMilli - startTimeMilli;
 
+        vetorExemplo.imprimirVetor();
+        
         System.out.println("Tempos Nano: "
                 + "\n Tempo Nano Inicial: " + startTimeNano
                 + "\n Tempo Nano Final: " + endTimeNano
@@ -28,7 +30,6 @@ public class QuickSort {
                 + "\n Tempo Milli Final: " + endTimeMilli
                 + "\n Total Milli: " + tempoTotalMilli);
         
-        vetorExemplo.imprimirVetor();
     }
 
     private static void quickSorter(int[] itens, int indiceEsquerdo, int indiceDireito) {

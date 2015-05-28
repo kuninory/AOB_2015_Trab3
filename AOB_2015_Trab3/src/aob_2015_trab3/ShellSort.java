@@ -43,6 +43,8 @@ public class ShellSort {
         long tempoTotalNano = endTimeNano - startTimeNano;
         long tempoTotalMilli = endTimeMilli - startTimeMilli;
 
+        vetorExemplo.imprimirVetor();
+        
         System.out.println("Tempos Nano: "
                 + "\n Tempo Nano Inicial: " + startTimeNano
                 + "\n Tempo Nano Final: " + endTimeNano
@@ -52,6 +54,5 @@ public class ShellSort {
                 + "\n Tempo Milli Final: " + endTimeMilli
                 + "\n Total Milli: " + tempoTotalMilli);
         
-        vetorExemplo.imprimirVetor();
     }
 }
